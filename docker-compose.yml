@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  monitor:
+    build: .
+    container_name: docker-discord-alerts
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
