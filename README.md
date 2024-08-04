@@ -98,9 +98,4 @@ Monitor your Docker containers effortlessly and receive real-time alerts in Disc
   ```bash
   docker logs docker-discord-monitor
   ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ---
