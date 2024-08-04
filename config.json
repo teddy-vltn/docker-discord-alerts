@@ -1,0 +1,26 @@
+{
+    "webhook_url": "YOUR_WEBHOOK_URL",
+    "events": {
+      "start": {
+        "title": "🚀 Container Started: {name}",
+        "description": "The container '{name}' has started successfully.",
+        "color": 3066993
+      },
+      "restart": {
+        "title": "🔄 Container Restarted: {name}",
+        "description": "The container '{name}' has been restarted.",
+        "color": 15844367
+      },
+      "stop": {
+        "title": "🛑 Container Stopped: {name}",
+        "description": "The container '{name}' has been stopped.",
+        "color": 15158332
+      },
+      "die": {
+        "title": "💀 Container Died: {name}",
+        "description": "The container '{name}' has stopped working.",
+        "color": 10038562
+      }
+    }
+  }
+  
