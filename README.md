@@ -39,7 +39,7 @@ This script monitors Docker container events and sends notifications to a Discor
 
    ```json
    {
-     "webhook_url": "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN",
+     "webhook_url": "YOUR_WEBHOOK_URL",
      "events": {
        "start": {
          "title": "🚀 Container Started: {name}",
@@ -65,7 +65,7 @@ This script monitors Docker container events and sends notifications to a Discor
    }
    ```
 
-   Replace `"YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"` with your actual Discord webhook URL.
+   Replace `"YOUR_WEBHOOK_URL"` with your actual Discord webhook URL.
 
 ## Usage
 
