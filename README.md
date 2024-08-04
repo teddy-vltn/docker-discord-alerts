@@ -1,20 +1,20 @@
 
-# Docker Container Monitoring with Discord Notifications
+# Docker Discord Notifier
 
-This script monitors Docker container events and sends notifications to a Discord channel using embeds. It tracks events such as container start, restart, stop, and termination, providing detailed information in each notification.
+Monitor your Docker containers effortlessly and receive real-time alerts in Discord with rich, customizable embeds. This project leverages Docker Compose to run the monitoring script as a continuous service, ensuring you stay informed on container events such as start, stop, restart, and failures.
 
 ## Features
 
-- **Monitors Docker Events**: Listens for Docker container events (`start`, `restart`, `stop`, `die`).
-- **Discord Integration**: Sends event notifications to a Discord channel using webhooks.
-- **Rich Embeds**: Notifications include detailed embeds with fields for event type, timestamp, and shutdown reasons.
-- **Configurable**: Uses a JSON configuration file for easy customization.
+- **Real-Time Monitoring**: Listens for Docker container events (`start`, `restart`, `stop`, `die`).
+- **Discord Notifications**: Sends event alerts to a Discord channel using webhooks.
+- **Rich Embeds**: Includes detailed information with fields for event type, timestamp, and shutdown reasons.
+- **Configurable**: Easily customize alerts using a JSON configuration file.
+- **Dockerized**: Run the script as a background service using Docker Compose.
 
 ## Prerequisites
 
-- Docker installed and running.
-- Python 3.x installed.
-- Discord account and a webhook URL from your server.
+- Docker and Docker Compose installed on your system.
+- A Discord account and a webhook URL from your server.
 
 ## Installation
 
@@ -25,21 +25,13 @@ This script monitors Docker container events and sends notifications to a Discor
    cd docker-discord-monitor
    ```
 
-2. **Install Required Python Packages**
+2. **Set Up the Configuration File**
 
-   Use `pip` to install the Docker SDK for Python:
-
-   ```bash
-   pip install docker
-   ```
-
-3. **Set Up the Configuration File**
-
-   Create a `config.json` file in the same directory as your script, or modify the provided example:
+   Create a `config.json` file in the project directory, or modify the provided example:
 
    ```json
    {
-     "webhook_url": "YOUR_WEBHOOK_URL",
+     "webhook_url": "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN",
      "events": {
        "start": {
          "title": "🚀 Container Started: {name}",
@@ -65,19 +57,17 @@ This script monitors Docker container events and sends notifications to a Discor
    }
    ```
 
-   Replace `"YOUR_WEBHOOK_URL"` with your actual Discord webhook URL.
+   Replace `"YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN"` with your actual Discord webhook URL.
 
 ## Usage
 
-1. **Run the Script**
+1. **Build and Start the Service**
 
-   Execute the script using Python:
+   Use Docker Compose to build and start the service in the background:
 
    ```bash
-   python monitor.py
+   docker-compose up -d
    ```
-
-   Replace `monitor.py` with the name of your script file if different.
 
 2. **Trigger Docker Events**
 
@@ -101,6 +91,18 @@ This script monitors Docker container events and sends notifications to a Discor
 
 ## Troubleshooting
 
-- Ensure Docker is running and the Python Docker SDK is installed.
+- Ensure Docker and Docker Compose are running correctly.
 - Verify that the Discord webhook URL is correct and active.
-- Check for any errors in the script output or console for troubleshooting.
+- Check for any errors in the container logs:
+
+  ```bash
+  docker logs docker-discord-monitor
+  ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to customize this README to suit your repository and include any additional information specific to your use case.
