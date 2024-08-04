@@ -104,5 +104,3 @@ Monitor your Docker containers effortlessly and receive real-time alerts in Disc
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-
-Feel free to customize this README to suit your repository and include any additional information specific to your use case.
